@@ -16,7 +16,7 @@ fn main() {
     let app_name = path.file_name().unwrap().to_str().unwrap();
 
     if args.len() < 2 {
-        println!("Usage: {} file [buffer size]", app_name);
+        println!("Usage: {} file [buffer size (bytes)]", app_name);
         exit(1);
     }
 
