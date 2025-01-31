@@ -31,7 +31,7 @@ fn main() {
 
     let start = Instant::now();
 
-    let file_size = dbg!(md.len());
+    let file_size = md.len();
     let mut bytes_read = 0;
     loop {
         let read = file.read(&mut buf).unwrap();
@@ -44,7 +44,7 @@ fn main() {
 
     let took = start.elapsed();
     println!(
-        "Metadata size: {}, Actually read {}. Took {}. {}/s",
+        "Size (in metadata): {}. Actually read: {}. Took time: {}. Throughput: {}",
         as_file_size_str(file_size as i128),
         as_file_size_str(bytes_read as i128),
         duration_display(&took),
