@@ -4,6 +4,10 @@ A simple cli utility to estimate how long it takes to read a file. The buffer si
 
 ## Usage
 
+```
+timeread <file> [buffer size (bytes)]
+```
+
 Default buffer size: 4KB
 
 ```shell
@@ -20,5 +24,5 @@ Sample output
 
 ```shell
 $ timeread src/main.rs
-> Metadata size: 2KB. Actually read: 2KB. Took time: 3.878µs. Throughput: 737MB/s
+> Size (in metadata): 2KB. Actually read: 2KB. Took time: 3.878µs. Throughput: 737MB/s
 ```
