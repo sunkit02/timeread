@@ -14,6 +14,7 @@ args.
   accessing metadata, hence the output is not a measure of raw reading
   performance but also takes into account of the filesystem's book keeping
   overhead.
+- This utility currently ignores all symlinks.
 
 ## Usage
 
