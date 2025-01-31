@@ -10,6 +10,10 @@ args.
   used as reference.
 - Units in output are calculated in the order of 1024 instead of 1000.
   - e.g. 1KB = 1024B, 1MB = 1024KB, etc
+- This utility also measures the time taken to traverse directories and
+  accessing metadata, hence the output is not a measure of raw reading
+  performance but also takes into account of the filesystem's book keeping
+  overhead.
 
 ## Usage
 
