@@ -5,19 +5,19 @@ A simple cli utility to estimate how long it takes to read a file. The buffer si
 ## Usage
 
 ```
-timeread <file> [buffer size (bytes)]
+timeread <path> [buffer size (bytes)]
 ```
 
 Default buffer size: 4KB
 
 ```shell
-timeread <file>
+timeread <path>
 ```
 
 1MB read buffer
 
 ```shell
-timeread <file> 1048576
+timeread <path> 1048576
 ```
 
 Sample output
