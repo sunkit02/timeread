@@ -13,11 +13,17 @@ pub struct ReadSizes {
 }
 
 pub fn read_path<P: AsRef<Path>>(path: P, buf: &mut Vec<u8>) -> ReadSizes {
-    let metadata = fs::metadata(&path).unwrap();
+    let metadata = fs::symlink_metadata(&path).unwrap();
     if metadata.is_dir() {
         read_directory(&path, buf)
     } else if metadata.is_file() {
         read_file(&path, buf)
+    } else if metadata.is_symlink() {
+        eprintln!("Ignoring symlink {:?}", path.as_ref());
+        ReadSizes {
+            metadata_size: 0,
+            actual_size: 0,
+        }
     } else {
         eprintln!(
             "Error: {:?} has unsupported file type. Only directories and plain files.",

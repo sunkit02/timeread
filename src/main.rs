@@ -9,7 +9,7 @@ mod utils;
 mod walk;
 
 fn main() {
-    let CliArgs { path, buf_size } = dbg!(parse_cli_args());
+    let CliArgs { path, buf_size } = parse_cli_args();
 
     let mut buf = vec![0u8; buf_size];
 
